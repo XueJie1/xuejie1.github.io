@@ -12,19 +12,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Xue Jie">
   <meta name="keywords" content="">
   
-  <meta name="description" content="前言    &#x2F;&#x2F; 获取文章发布日期   var publicationDate &#x3D; new Date(&#39;2023-08-21&#39;); &#x2F;&#x2F; 请替换为实际的发布日期    &#x2F;&#x2F; 计算天数差  var currentDate &#x3D; new Date();  var timeDifference &#x3D; currentDate.getTime() - publicatio">
+  <meta name="description" content="前言     &#x2F;&#x2F; 获取文章发布日期   var publicationDate &#x3D; new Date(&#39;2023-08-21&#39;); &#x2F;&#x2F; 请替换为实际的发布日期 &#x2F;&#x2F; 计算天数差 var currentDate &#x3D; new Date(); var timeDifference &#x3D; currentDate.getTime() - publicationDate.getTime(); var da">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生源地助学贷款的申请流程和利息计算">
 <meta property="og:url" content="https://xuejie1.github.io/2023/08/21/%E5%8A%A9%E5%AD%A6%E8%B4%B7%E6%AC%BE/index.html">
 <meta property="og:site_name" content="欢迎">
-<meta property="og:description" content="前言    &#x2F;&#x2F; 获取文章发布日期   var publicationDate &#x3D; new Date(&#39;2023-08-21&#39;); &#x2F;&#x2F; 请替换为实际的发布日期    &#x2F;&#x2F; 计算天数差  var currentDate &#x3D; new Date();  var timeDifference &#x3D; currentDate.getTime() - publicatio">
+<meta property="og:description" content="前言     &#x2F;&#x2F; 获取文章发布日期   var publicationDate &#x3D; new Date(&#39;2023-08-21&#39;); &#x2F;&#x2F; 请替换为实际的发布日期 &#x2F;&#x2F; 计算天数差 var currentDate &#x3D; new Date(); var timeDifference &#x3D; currentDate.getTime() - publicationDate.getTime(); var da">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-21T08:37:59.000Z">
-<meta property="article:modified_time" content="2023-08-25T09:39:21.279Z">
+<meta property="article:modified_time" content="2023-08-25T14:01:17.147Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学生">
 <meta property="article:tag" content="贫穷">
@@ -46,6 +48,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -257,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.4k 字
         
       </span>
     
@@ -268,7 +272,7 @@
         
         
         
-          18 分钟
+          20 分钟
         
       </span>
     
@@ -310,16 +314,28 @@
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><div id="article-warning"></div>
+                <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<div id="article-warning"></div>
 <script>
   // 获取文章发布日期
   var publicationDate = new Date('2023-08-21'); // 请替换为实际的发布日期
-
-<p>  &#x2F;&#x2F; 计算天数差<br>  var currentDate &#x3D; new Date();<br>  var timeDifference &#x3D; currentDate.getTime() - publicationDate.getTime();<br>  var daysDifference &#x3D; Math.floor(timeDifference &#x2F; (1000 * 60 * 60 * 24));</p>
-<p>  &#x2F;&#x2F; 显示提醒消息<br>  var warningElement &#x3D; document.getElementById(‘article-warning’);<br>  if (daysDifference &gt; 0) {<br>    warningElement.innerHTML &#x3D; ‘此文章已经发布 ‘ + daysDifference + ‘ 天，文章信息可能会过时。’;<br>  }<br></script></p>
-<p>助学贷款按照受理机构可分为<em>生源地助学贷款</em>和<em>高校助学贷款（校园地助学贷款）</em>。<br>生源地助学贷款办理条件和还款要求相对宽松，所以推荐办理生源地贷款。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="生源地助学贷款和国家高校助学贷款哪个更合适？ - CTGU罗同学的回答 - 知乎
-https://www.zhihu.com/question/278652840/answer/2749685168">[1]</span></a></sup><br>此处只介绍生源地贷款的相关计算。</p>
-<h1 id="国家开发银行生源地助学贷款"><a href="#国家开发银行生源地助学贷款" class="headerlink" title="国家开发银行生源地助学贷款"></a>国家开发银行生源地助学贷款</h1><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<p>// 计算天数差<br />
+var currentDate = new Date();<br />
+var timeDifference = currentDate.getTime() - publicationDate.getTime();<br />
+var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));</p>
+<p>// 显示提醒消息<br />
+var warningElement = document.getElementById(‘article-warning’);<br />
+if (daysDifference &gt; 0) {<br />
+warningElement.innerHTML = ‘此文章已经发布 ’ + daysDifference + ’ 天，文章信息可能会过时。’;<br />
+}<br />
+</script></p>
+<p>助学贷款按照受理机构可分为<em>生源地助学贷款</em>和<em>高校助学贷款（校园地助学贷款）</em>。<br />
+生源地助学贷款办理条件和还款要求相对宽松，所以推荐办理生源地贷款。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="生源地助学贷款和国家高校助学贷款哪个更合适？ - CTGU罗同学的回答 - 知乎
+https://www.zhihu.com/question/278652840/answer/2749685168">[1]</span></a></sup><br />
+此处只介绍生源地贷款的申请流程和相关计算。</p>
+<h1 id="国家开发银行生源地助学贷款"><a class="markdownIt-Anchor" href="#国家开发银行生源地助学贷款"></a> 国家开发银行生源地助学贷款</h1>
+<h2 id="流程"><a class="markdownIt-Anchor" href="#流程"></a> 流程</h2>
+<ol>
 <li>注册并登录 <a target="_blank" rel="noopener" href="https://www.csls.cdb.com.cn/">国家开发银行生源地助学贷款学生在线系统</a>。</li>
 <li>在网站完善基本资料。</li>
 <li>在首页点击“贷款申请”，并填写个人基本信息（如贷款金额、贷款年限等）。个人账户信息系统已帮你填好，不用更改。</li>
@@ -329,149 +345,165 @@ https://www.zhihu.com/question/278652840/answer/2749685168">[1]</span></a></sup>
 <li>拿着：填写好的<strong>申请表原件</strong>、<strong>家庭经济困难学生认定申请表原件</strong>、<strong>本人</strong>和<strong>共同借款人</strong>的<strong>身份证原件</strong>、本人的<strong>录取通知书</strong>或<strong>学生证原件</strong>，去当地教育局里的资助中心进行办理。（资助中心位置可通过在线系统首页的“本人所属资助中心联系方式”查询）</li>
 <li>如果本人和共同借款人不在同一户口簿上，还要拿双方的户口簿<strong>原件</strong>。</li>
 </ol>
-<h2 id="年利率计算"><a href="#年利率计算" class="headerlink" title="年利率计算"></a>年利率计算</h2><p>还款计划可通过在线系统查询，如果你还未申请贷款又想算利息和还款计划，请阅读本章节和“还款规则章节”。</p>
+<h2 id="年利率计算sup-idfnref2-classfootnote-refa-hreffn2-relfootnotespan-classhint-top-hint-rounded-aria-label国家开发银行生源地信用助学贷款还款指南-httpwwwwenjianggovcnwjzzwc1325902022-0519ca84925a5762444a9cca854c7dfba62bfiles8da84a80b45048648de4995f68b4d7d3pdf2spanasupsup-idfnref3-classfootnote-refa-hreffn3-relfootnotespan-classhint-top-hint-rounded-aria-label教育部-财政部-中国人民银行-银保监会关于调整完善国家助学贷款有关政策的通知-httpswwwgovcnzhengcezhengceku2020-0721content_5528653htm3spanasup"><a class="markdownIt-Anchor" href="#年利率计算sup-idfnref2-classfootnote-refa-hreffn2-relfootnotespan-classhint-top-hint-rounded-aria-label国家开发银行生源地信用助学贷款还款指南-httpwwwwenjianggovcnwjzzwc1325902022-0519ca84925a5762444a9cca854c7dfba62bfiles8da84a80b45048648de4995f68b4d7d3pdf2spanasupsup-idfnref3-classfootnote-refa-hreffn3-relfootnotespan-classhint-top-hint-rounded-aria-label教育部-财政部-中国人民银行-银保监会关于调整完善国家助学贷款有关政策的通知-httpswwwgovcnzhengcezhengceku2020-0721content_5528653htm3spanasup"></a> 年利率计算<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="国家开发银行生源地信用助学贷款还款指南  http://www.wenjiang.gov.cn/wjzzw/c132590/2022-05/19/ca84925a5762444a9cca854c7dfba62b/files/8da84a80b45048648de4995f68b4d7d3.pdf">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="教育部 财政部 中国人民银行 银保监会关于调整完善国家助学贷款有关政策的通知 https://www.gov.cn/zhengce/zhengceku/2020-07/21/content_5528653.htm">[3]</span></a></sup></h2>
+<p>还款计划可通过在线系统查询，如果你还未申请贷款又想算利息和还款计划，请阅读本章节和“还款规则章节”。</p>
 <p>此章节的内容参考<a target="_blank" rel="noopener" href="http://www.wenjiang.gov.cn/wjzzw/c132590/2022-05/19/ca84925a5762444a9cca854c7dfba62b/files/8da84a80b45048648de4995f68b4d7d3.pdf">国家开发银行生源地信用助学贷款还款指南</a>和<a target="_blank" rel="noopener" href="https://www.gov.cn/zhengce/zhengceku/2020-07/21/content_5528653.htm">教育部 财政部 中国人民银行 银保监会关于调整完善国家助学贷款有关政策的通知</a></p>
-<p>年利率为<br>$$LPR5Y - 0.3% $$(百分比，不知道为什么用转义字符打不出来百分号)</p>
+<p>年利率为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>P</mi><mi>R</mi><mn>5</mn><mi>Y</mi><mo>−</mo><mn>0.3</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">LPR5Y - 0.3\% 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord">5</span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.80556em;vertical-align:-0.05556em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">3</span><span class="mord">%</span></span></span></span></span></p>
+<p>(百分比，不知道为什么用转义字符打不出来百分号)</p>
 <p>年利率在每年的 12 月 21 日根据同期 LPR5Y 调整一次。</p>
 <p>LPR是贷款市场报价利率，可以通过<a target="_blank" rel="noopener" href="https://www.boc.cn/fimarkets/lilv/fd32/201310/t20131031_2591219.html">贷款市场报价利率（LPR）（中国银行官网）</a>查询。5Y 指 5 年期以上。</p>
 <p>如果你要算今年的助学贷款年利率，就可以查上面网站所给的<strong>去年 12 月 21 日</strong>（或 20 日）的 <strong>5 年期以上</strong>一栏的利率数，再将这个数<strong>减去 0.3%</strong> 就是今年的助学贷款年利率。</p>
 <p>比如，要算 2023 年的助学贷款年利率，那么查去年（2022年）12 月 20 日的 5 年期以上的利率数，为 4.30% 。再把这个数字减去 0.3% ，得出 4.0% 就是 2023 年助学贷款的年利率。</p>
-<h2 id="还款规则"><a href="#还款规则" class="headerlink" title="还款规则"></a>还款规则</h2><h3 id="在校期间"><a href="#在校期间" class="headerlink" title="在校期间"></a>在校期间</h3><p>在校期间产生的利息<strong>由国家代付</strong>。</p>
-<h3 id="宽限期"><a href="#宽限期" class="headerlink" title="宽限期"></a>宽限期</h3><p>从毕业开始的五年内为<strong>宽限期</strong>。（毕业当年为第一年）</p>
+<h2 id="还款规则sup-idfnref2-classfootnote-refa-hreffn2-relfootnotespan-classhint-top-hint-rounded-aria-label国家开发银行生源地信用助学贷款还款指南-httpwwwwenjianggovcnwjzzwc1325902022-0519ca84925a5762444a9cca854c7dfba62bfiles8da84a80b45048648de4995f68b4d7d3pdf2spanasupsup-idfnref3-classfootnote-refa-hreffn3-relfootnotespan-classhint-top-hint-rounded-aria-label教育部-财政部-中国人民银行-银保监会关于调整完善国家助学贷款有关政策的通知-httpswwwgovcnzhengcezhengceku2020-0721content_5528653htm3spanasup"><a class="markdownIt-Anchor" href="#还款规则sup-idfnref2-classfootnote-refa-hreffn2-relfootnotespan-classhint-top-hint-rounded-aria-label国家开发银行生源地信用助学贷款还款指南-httpwwwwenjianggovcnwjzzwc1325902022-0519ca84925a5762444a9cca854c7dfba62bfiles8da84a80b45048648de4995f68b4d7d3pdf2spanasupsup-idfnref3-classfootnote-refa-hreffn3-relfootnotespan-classhint-top-hint-rounded-aria-label教育部-财政部-中国人民银行-银保监会关于调整完善国家助学贷款有关政策的通知-httpswwwgovcnzhengcezhengceku2020-0721content_5528653htm3spanasup"></a> 还款规则<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="国家开发银行生源地信用助学贷款还款指南  http://www.wenjiang.gov.cn/wjzzw/c132590/2022-05/19/ca84925a5762444a9cca854c7dfba62b/files/8da84a80b45048648de4995f68b4d7d3.pdf">[2]</span></a></sup><sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="教育部 财政部 中国人民银行 银保监会关于调整完善国家助学贷款有关政策的通知 https://www.gov.cn/zhengce/zhengceku/2020-07/21/content_5528653.htm">[3]</span></a></sup></h2>
+<h3 id="在校期间"><a class="markdownIt-Anchor" href="#在校期间"></a> 在校期间</h3>
+<p>在校期间产生的利息<strong>由国家代付</strong>。</p>
+<h3 id="宽限期"><a class="markdownIt-Anchor" href="#宽限期"></a> 宽限期</h3>
+<p>从毕业开始的五年内为<strong>宽限期</strong>。（毕业当年为第一年）</p>
 <p>宽限期内的每年的12月20日<strong>仅偿还当年产生的利息</strong>。</p>
 <p>毕业当年的 12 月 20 日偿还自本年 9 月 1 日至 12 月 20 日产生的利息。</p>
 <p>之后的四年，每年的 12 月 20 日偿还从去年 12 月 21 日到今年的 12 月 20 日产生的利息。</p>
-<h3 id="正式还款"><a href="#正式还款" class="headerlink" title="正式还款"></a>正式还款</h3><p>自毕业后的第六年起<strong>开始偿还本金和利息</strong>。（毕业当年为第一年）</p>
+<h3 id="正式还款"><a class="markdownIt-Anchor" href="#正式还款"></a> 正式还款</h3>
+<p>自毕业后的第六年起<strong>开始偿还本金和利息</strong>。（毕业当年为第一年）</p>
 <p>每年的 12 月 20 日（最后一年为 9 月 20 日）偿还本年产生的利息和一年的本金。</p>
-<h3 id="提前还款"><a href="#提前还款" class="headerlink" title="提前还款"></a>提前还款</h3><p>毕业年的 <strong>8 月 15 日前</strong>可以申请一次性还款免息，一次把本金还清，<strong>不计利息</strong>。</p>
-<h3 id="逾期还款"><a href="#逾期还款" class="headerlink" title="逾期还款"></a>逾期还款</h3><p>逾期还款的罚息为 30%。</p>
-<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>比如小明在 2023 年大二时申请了 8000 元的助学贷款，10 年内还清。</p>
+<h3 id="提前还款"><a class="markdownIt-Anchor" href="#提前还款"></a> 提前还款</h3>
+<p>毕业年的 <strong>8 月 15 日前</strong>可以申请一次性还款免息，一次把本金还清，<strong>不计利息</strong>。</p>
+<h3 id="逾期还款"><a class="markdownIt-Anchor" href="#逾期还款"></a> 逾期还款</h3>
+<p>逾期还款的罚息为 30%。</p>
+<h2 id="举例"><a class="markdownIt-Anchor" href="#举例"></a> 举例</h2>
+<p>比如小明在 2023 年大二时申请了 8000 元的助学贷款，10 年内还清。</p>
 <table>
 <thead>
 <tr>
-<th align="center">时期</th>
-<th align="center">年份</th>
-<th align="center">剩余本金（还款后）</th>
-<th align="center">应还本金</th>
-<th align="center">利息</th>
-<th align="center">应还</th>
+<th style="text-align:center">时期</th>
+<th style="text-align:center">年份</th>
+<th style="text-align:center">剩余本金（还款后）</th>
+<th style="text-align:center">应还本金</th>
+<th style="text-align:center">利息</th>
+<th style="text-align:center">应还</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">在校</td>
-<td align="center">2023</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥0.00</td>
+<tbody>
+<tr>
+<td style="text-align:center">在校</td>
+<td style="text-align:center">2023</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥0.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2024</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥0.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2024</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥0.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">至2025年9月1日</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥0.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">至2025年9月1日</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥0.00</td>
 </tr>
 <tr>
-<td align="center">宽限期</td>
-<td align="center">至2025年12月20日</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥106.67</td>
-<td align="center">¥106.67</td>
+<td style="text-align:center">宽限期</td>
+<td style="text-align:center">至2025年12月20日</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥106.67</td>
+<td style="text-align:center">¥106.67</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2026</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥320.00</td>
-<td align="center">¥320.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2026</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥320.00</td>
+<td style="text-align:center">¥320.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2027</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥320.00</td>
-<td align="center">¥320.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2027</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥320.00</td>
+<td style="text-align:center">¥320.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2028</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥320.00</td>
-<td align="center">¥320.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2028</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥320.00</td>
+<td style="text-align:center">¥320.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2029</td>
-<td align="center">¥8,000.00</td>
-<td align="center">¥0.00</td>
-<td align="center">¥320.00</td>
-<td align="center">¥320.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2029</td>
+<td style="text-align:center">¥8,000.00</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥320.00</td>
+<td style="text-align:center">¥320.00</td>
 </tr>
 <tr>
-<td align="center">正式还款</td>
-<td align="center">2030</td>
-<td align="center">¥6,000.00</td>
-<td align="center">¥2,000.00</td>
-<td align="center">¥320.00</td>
-<td align="center">¥2,320.00</td>
+<td style="text-align:center">正式还款</td>
+<td style="text-align:center">2030</td>
+<td style="text-align:center">¥6,000.00</td>
+<td style="text-align:center">¥2,000.00</td>
+<td style="text-align:center">¥320.00</td>
+<td style="text-align:center">¥2,320.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2031</td>
-<td align="center">¥4,000.00</td>
-<td align="center">¥2,000.00</td>
-<td align="center">¥240.00</td>
-<td align="center">¥2,240.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2031</td>
+<td style="text-align:center">¥4,000.00</td>
+<td style="text-align:center">¥2,000.00</td>
+<td style="text-align:center">¥240.00</td>
+<td style="text-align:center">¥2,240.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2032</td>
-<td align="center">¥2,000.00</td>
-<td align="center">¥2,000.00</td>
-<td align="center">¥160.00</td>
-<td align="center">¥2,160.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2032</td>
+<td style="text-align:center">¥2,000.00</td>
+<td style="text-align:center">¥2,000.00</td>
+<td style="text-align:center">¥160.00</td>
+<td style="text-align:center">¥2,160.00</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">2033</td>
-<td align="center">¥0.00</td>
-<td align="center">¥2,000.00</td>
-<td align="center">¥80.00</td>
-<td align="center">¥2,080.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2033</td>
+<td style="text-align:center">¥0.00</td>
+<td style="text-align:center">¥2,000.00</td>
+<td style="text-align:center">¥80.00</td>
+<td style="text-align:center">¥2,080.00</td>
 </tr>
 <tr>
-<td align="center">共计利息：</td>
-<td align="center">¥2,186.67</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">共计利息：</td>
+<td style="text-align:center">¥2,186.67</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">共需还款：</td>
-<td align="center">¥10,186.67</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">共需还款：</td>
+<td style="text-align:center">¥10,186.67</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
-</tbody></table>
-<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>生源地助学贷款和国家高校助学贷款哪个更合适？ - CTGU罗同学的回答 - 知乎<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/278652840/answer/2749685168">https://www.zhihu.com/question/278652840/answer/2749685168</a>
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+</tbody>
+</table>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>生源地助学贷款和国家高校助学贷款哪个更合适？ - CTGU罗同学的回答 - 知乎<br />
+<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/278652840/answer/2749685168">https://www.zhihu.com/question/278652840/answer/2749685168</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>国家开发银行生源地信用助学贷款还款指南  <a target="_blank" rel="noopener" href="http://www.wenjiang.gov.cn/wjzzw/c132590/2022-05/19/ca84925a5762444a9cca854c7dfba62b/files/8da84a80b45048648de4995f68b4d7d3.pdf">http://www.wenjiang.gov.cn/wjzzw/c132590/2022-05/19/ca84925a5762444a9cca854c7dfba62b/files/8da84a80b45048648de4995f68b4d7d3.pdf</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>教育部 财政部 中国人民银行 银保监会关于调整完善国家助学贷款有关政策的通知 <a target="_blank" rel="noopener" href="https://www.gov.cn/zhengce/zhengceku/2020-07/21/content_5528653.htm">https://www.gov.cn/zhengce/zhengceku/2020-07/21/content_5528653.htm</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             
@@ -662,7 +694,6 @@ https://www.zhihu.com/question/278652840/answer/2749685168">[1]</span></a></sup>
 
 
 
-
     
 
     
@@ -701,15 +732,47 @@ https://www.zhihu.com/question/278652840/answer/2749685168">[1]</span></a></sup>
   <footer>
     <div class="footer-inner">
   
-    <div class="footer-content">
-       <img alt="Static Badge" src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&logoColor=blue&link=https%3A%2F%2Fhexo.io%2F" srcset="/img/loading.gif" lazyload> <img alt="Static Badge" src="https://img.shields.io/badge/Theme-Fluid-blue?logoColor=blue&link=https%3A%2F%2Fgithub.com%2Ffluid-dev%2Fhexo-theme-fluid> <br><span>© 2023 是薛颉不是学姐</span> <br><a href=" srcset="/img/loading.gif" lazyload/隐私政策"<span>隐私政策</span></a> 
-    </div>
+  <div class="footer-content">
+     <span><img alt="Static Badge" src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&logoColor=blue&link=https%3A%2F%2Fhexo.io%2F" srcset="/img/loading.gif" lazyload></span> <span><img alt="Static Badge" src="https://img.shields.io/badge/Theme-Fluid-blue?cacheSeconds=https%3A%2F%2Fgithub.com%2Ffluid-dev%2Fhexo-theme-fluid" srcset="/img/loading.gif" lazyload></span> <span><br/><a href="./隐私政策">隐私政策</a></span> 
+  </div>
   
   
   
   
-</div>
+  <!--添加网站运行时间-->
+  <div>
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>
+    <script>
+      var now = new Date();
 
+      function createtime() {
+        var grt = new Date("08/20/2023 18:37:17"); //此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+          hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+          mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+          snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = "已🚀 &nbsp" + dnum + "&nbsp天"; //此次自定义显示内容
+        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分钟&nbsp" + snum + "&nbsp秒";
+      } //此次自定义显示内容
+      setInterval("createtime()", 250);
+    </script>
+  </div>
+</div>
   </footer>
 
   <!-- Scripts -->
@@ -849,49 +912,6 @@ https://www.zhihu.com/question/278652840/answer/2749685168">[1]</span></a></sup>
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

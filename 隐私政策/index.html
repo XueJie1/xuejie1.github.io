@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
@@ -363,15 +365,47 @@
   <footer>
     <div class="footer-inner">
   
-    <div class="footer-content">
-       <img alt="Static Badge" src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&logoColor=blue&link=https%3A%2F%2Fhexo.io%2F" srcset="/img/loading.gif" lazyload> <img alt="Static Badge" src="https://img.shields.io/badge/Theme-Fluid-blue?logoColor=blue&link=https%3A%2F%2Fgithub.com%2Ffluid-dev%2Fhexo-theme-fluid> <br><span>© 2023 是薛颉不是学姐</span> <br><a href=" srcset="/img/loading.gif" lazyload/隐私政策"<span>隐私政策</span></a> 
-    </div>
+  <div class="footer-content">
+     <span><img alt="Static Badge" src="https://img.shields.io/badge/Frame-Hexo-blue?logo=Hexo&logoColor=blue&link=https%3A%2F%2Fhexo.io%2F" srcset="/img/loading.gif" lazyload></span> <span><img alt="Static Badge" src="https://img.shields.io/badge/Theme-Fluid-blue?cacheSeconds=https%3A%2F%2Fgithub.com%2Ffluid-dev%2Fhexo-theme-fluid" srcset="/img/loading.gif" lazyload></span> <span><br/><a href="./隐私政策">隐私政策</a></span> 
+  </div>
   
   
   
   
-</div>
+  <!--添加网站运行时间-->
+  <div>
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>
+    <script>
+      var now = new Date();
 
+      function createtime() {
+        var grt = new Date("08/20/2023 18:37:17"); //此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+          hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+          mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+          snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = "已🚀 &nbsp" + dnum + "&nbsp天"; //此次自定义显示内容
+        document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分钟&nbsp" + snum + "&nbsp秒";
+      } //此次自定义显示内容
+      setInterval("createtime()", 250);
+    </script>
+  </div>
+</div>
   </footer>
 
   <!-- Scripts -->
