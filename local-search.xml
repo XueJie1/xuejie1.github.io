@@ -77,7 +77,7 @@
     <link href="/2023/09/23/%E6%9C%BA%E6%88%BF%E7%94%B5%E8%84%91%E6%8A%98%E8%85%BE%E8%AE%B0/"/>
     <url>/2023/09/23/%E6%9C%BA%E6%88%BF%E7%94%B5%E8%84%91%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[<h1 id="机房电脑"><a class="markdownIt-Anchor" href="#机房电脑"></a> 机房电脑</h1><p>大学的机房电脑不出意外地配置差：<br />CPU: Intel Core i5-3470<br />内存: DDR3 8G<br />其他没看，见图<br /><img src="../images/PC.jpg" alt="HWiNFO" /></p><h1 id="u盘ventoyubuntu"><a class="markdownIt-Anchor" href="#u盘ventoyubuntu"></a> U盘+Ventoy+Ubuntu</h1><h2 id="准备"><a class="markdownIt-Anchor" href="#准备"></a> 准备：</h2><ul><li>一台 Windows / Linux 电脑</li><li>一个 Ubuntu 或其他 Linux 发行版镜像，尽量选择 LTS （长期支持版）</li><li>一个 U 盘，容量至少 64 G，传输速度越快越好（也可选择移动硬盘）</li><li>Ventoy 软件，<a href="https://www.ventoy.net/cn/download.html">下载链接</a></li><li>虚拟机，如 <a href="https://www.virtualbox.org/wiki/Downloads">VM VirtualBox</a><br />（有空再更:P）</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="机房电脑"><a class="markdownIt-Anchor" href="#机房电脑"></a> 机房电脑</h1><p>大学的机房电脑不出意外地配置差：<br />CPU: Intel Core i5-3470<br />内存: DDR3 8G<br />其他没看，见图<br /><img src="/images/PC.jpg" alt="HWiNFO" /></p><h1 id="u盘ventoyubuntu"><a class="markdownIt-Anchor" href="#u盘ventoyubuntu"></a> U盘+Ventoy+Ubuntu</h1><h2 id="准备"><a class="markdownIt-Anchor" href="#准备"></a> 准备：</h2><ul><li>一台 Windows / Linux 电脑</li><li>一个 Ubuntu 或其他 Linux 发行版镜像，尽量选择 LTS （长期支持版）</li><li>一个 U 盘，容量至少 64 G，传输速度越快越好（也可选择移动硬盘）</li><li>Ventoy 软件，<a href="https://www.ventoy.net/cn/download.html">下载链接</a></li><li>虚拟机，如 <a href="https://www.virtualbox.org/wiki/Downloads">VM VirtualBox</a><br />（有空再更:P）</li></ul>]]></content>
     
     
     
