@@ -9,8 +9,27 @@
     <atom:link href="https://xuejie1.top/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 24 Aug 2024 12:17:17 GMT</pubDate>
+    <pubDate>Sat, 01 Nov 2025 09:26:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>如何在 Android 平板上使用 Termux 和 Visual Studio Code 编程</title>
+      <link>https://xuejie1.top/2025/11/01/how-to-code-with-your-android-tablet/</link>
+      <guid>https://xuejie1.top/2025/11/01/how-to-code-with-your-android-tablet/</guid>
+      <pubDate>Sat, 01 Nov 2025 09:25:40 GMT</pubDate>
+      
+      
+      
+      
+      
+      <category domain="https://xuejie1.top/tags/%E7%BC%96%E7%A8%8B/">编程</category>
+      
+      <category domain="https://xuejie1.top/tags/%E5%AE%89%E5%8D%93/">安卓</category>
+      
+      
+      <comments>https://xuejie1.top/2025/11/01/how-to-code-with-your-android-tablet/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>CS61C FA20 资源</title>
