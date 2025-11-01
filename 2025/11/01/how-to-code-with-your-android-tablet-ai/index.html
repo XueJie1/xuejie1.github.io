@@ -18,25 +18,23 @@
   <meta name="author" content="Xue Jie">
   <meta name="keywords" content="">
   
-  <meta name="description" content="前言 此教程假设：  阅读者熟悉 Linux 相关的基本知识，并使用过 Linux 和其命令行一段时间。 阅读者要操作的平板的处理器架构是 Arm64。 阅读者有在官网询问 AI （如 Deepseek, ChatGPT, Claude）技术问题的能力。   下载并安装 Termux 在 GitHub 或 F-Droid 下载 Termux。  配置 Termux  （可选）让 Termux 可">
+  <meta name="description" content="〇、前言 您是否曾想过，将手中的安卓平板转变为一个功能强大的便携式编程工作站？本教程将引导您通过 Termux 和 proot-distro，在无需 Root 的情况下，安装一个完整的 Linux 发行版（以 Ubuntu 为例），并运行 VS Code Web 服务。最终，您只需一个浏览器，即可随时随地享受桌面级的编码体验。 在开始之前，请确保您：  具备 Linux 基础： 熟悉基本的命令行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程">
-<meta property="og:url" content="https://xuejie1.top/2025/11/01/how-to-code-with-your-android-tablet/index.html">
+<meta property="og:title" content="如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版）">
+<meta property="og:url" content="https://xuejie1.top/2025/11/01/how-to-code-with-your-android-tablet-ai/index.html">
 <meta property="og:site_name" content="XueJie 的博客">
-<meta property="og:description" content="前言 此教程假设：  阅读者熟悉 Linux 相关的基本知识，并使用过 Linux 和其命令行一段时间。 阅读者要操作的平板的处理器架构是 Arm64。 阅读者有在官网询问 AI （如 Deepseek, ChatGPT, Claude）技术问题的能力。   下载并安装 Termux 在 GitHub 或 F-Droid 下载 Termux。  配置 Termux  （可选）让 Termux 可">
+<meta property="og:description" content="〇、前言 您是否曾想过，将手中的安卓平板转变为一个功能强大的便携式编程工作站？本教程将引导您通过 Termux 和 proot-distro，在无需 Root 的情况下，安装一个完整的 Linux 发行版（以 Ubuntu 为例），并运行 VS Code Web 服务。最终，您只需一个浏览器，即可随时随地享受桌面级的编码体验。 在开始之前，请确保您：  具备 Linux 基础： 熟悉基本的命令行">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-11-01T09:25:40.000Z">
-<meta property="article:modified_time" content="2025-11-01T14:10:10.004Z">
+<meta property="article:published_time" content="2025-11-01T14:15:38.000Z">
+<meta property="article:modified_time" content="2025-11-01T14:18:46.540Z">
 <meta property="article:author" content="Xue Jie">
-<meta property="article:tag" content="编程">
-<meta property="article:tag" content="安卓">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@XueJie32">
 <meta name="twitter:site" content="https://x.com/XueJie32">
   
   
   
-  <title>如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程 - XueJie 的博客</title>
+  <title>如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版） - XueJie 的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -254,7 +252,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程"></span>
+            <span id="subtitle" data-typed-text="如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版）"></span>
           
         </div>
 
@@ -265,8 +263,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-01 17:25" pubdate>
-          2025年11月1日 下午
+        <time datetime="2025-11-01 22:15" pubdate>
+          2025年11月1日 晚上
         </time>
       </span>
     
@@ -277,7 +275,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          4.1k 字
         
       </span>
     
@@ -288,7 +286,7 @@
         
         
         
-          24 分钟
+          35 分钟
         
       </span>
     
@@ -325,101 +323,152 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程</h1>
+            <h1 id="seo-header">如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版）</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
-<p>此教程假设：</p>
+                <h3 id="〇-前言"><a class="markdownIt-Anchor" href="#〇-前言"></a> <strong>〇、前言</strong></h3>
+<p>您是否曾想过，将手中的安卓平板转变为一个功能强大的便携式编程工作站？本教程将引导您通过 Termux 和 <code>proot-distro</code>，在<strong>无需 Root</strong> 的情况下，安装一个完整的 Linux 发行版（以 Ubuntu 为例），并运行 VS Code Web 服务。最终，您只需一个浏览器，即可随时随地享受桌面级的编码体验。</p>
+<p><strong>在开始之前，请确保您：</strong></p>
 <ol>
-<li>阅读者熟悉 Linux 相关的基本知识，并使用过 Linux 和其命令行一段时间。</li>
-<li>阅读者要操作的平板的处理器架构是 Arm64。</li>
-<li>阅读者有在官网询问 AI （如 <a target="_blank" rel="noopener" href="https://chat.deepseek.com">Deepseek</a>, <a target="_blank" rel="noopener" href="https://chatgpt.com">ChatGPT</a>, <a target="_blank" rel="noopener" href="https://claude.ai">Claude</a>）技术问题的能力。</li>
+<li><strong>具备 Linux 基础：</strong> 熟悉基本的命令行操作，理解文件系统和用户权限等概念。</li>
+<li><strong>确认设备架构：</strong> 本教程的操作及软件下载均针对 <strong>Arm64 (aarch64)</strong> 架构的平板电脑。绝大多数现代安卓设备都符合此条件。</li>
+<li><strong>善用 AI 助手：</strong> 遇到问题时，能够清晰地向 <a target="_blank" rel="noopener" href="https://chat.openai.com">ChatGPT</a>、<a target="_blank" rel="noopener" href="https://claude.ai">Claude</a> 或 <a target="_blank" rel="noopener" href="https://chat.deepseek.com">Deepseek</a> 等 AI 工具描述问题，这将是您强大的后援。</li>
 </ol>
-<h2 id="下载并安装-termux"><a class="markdownIt-Anchor" href="#下载并安装-termux"></a> 下载并安装 Termux</h2>
-<p>在 <a target="_blank" rel="noopener" href="https://github.com/termux/termux-app/releases/latest">GitHub</a> 或 <a target="_blank" rel="noopener" href="https://f-droid.org/packages/com.termux/">F-Droid</a> 下载 Termux。</p>
-<h2 id="配置-termux"><a class="markdownIt-Anchor" href="#配置-termux"></a> 配置 Termux</h2>
-<h3 id="可选让-termux-可以访问内部存储"><a class="markdownIt-Anchor" href="#可选让-termux-可以访问内部存储"></a> （可选）让 Termux 可以访问内部存储</h3>
-<p>在 Termux 命令行处键入以下内容并按回车：</p>
+<hr>
+<h3 id="一-基础环境安装与配置-termux"><a class="markdownIt-Anchor" href="#一-基础环境安装与配置-termux"></a> <strong>一、基础环境：安装与配置 Termux</strong></h3>
+<p>Termux 是我们通往 Linux 世界的大门。</p>
+<h4 id="11-下载并安装-termux"><a class="markdownIt-Anchor" href="#11-下载并安装-termux"></a> <strong>1.1 下载并安装 Termux</strong></h4>
+<blockquote>
+<p><strong>重要提示：</strong> 请<strong>不要</strong>从 Google Play 商店下载 Termux，该版本已停止更新且存在诸多问题。</p>
+</blockquote>
+<p>请从以下官方渠道获取最新版本：</p>
+<ul>
+<li><strong><a target="_blank" rel="noopener" href="https://github.com/termux/termux-app/releases/latest">GitHub Releases</a></strong> (推荐)</li>
+<li><strong><a target="_blank" rel="noopener" href="https://f-droid.org/packages/com.termux/">F-Droid</a></strong></li>
+</ul>
+<h4 id="12-可选授予存储权限"><a class="markdownIt-Anchor" href="#12-可选授予存储权限"></a> <strong>1.2 （可选）授予存储权限</strong></h4>
+<p>为了让 Termux 内的程序能够读写平板的内部存储（例如 <code>/storage/emulated/0</code> 目录），请在 Termux 命令行中执行：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">termux-setup-storage<br></code></pre></td></tr></table></figure>
-<p>此时平板会弹出一个授权选项，同意授权即可。</p>
-<h3 id="更改-termux-软件源"><a class="markdownIt-Anchor" href="#更改-termux-软件源"></a> 更改 Termux 软件源</h3>
-<p>在 Termux 命令行处键入以下内容并按回车：</p>
+<p>系统将弹出授权请求，请点击“允许”。</p>
+<h4 id="13-更换为国内镜像源"><a class="markdownIt-Anchor" href="#13-更换为国内镜像源"></a> <strong>1.3 更换为国内镜像源</strong></h4>
+<p>更换镜像源是确保软件包下载速度的关键一步。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">termux-change-repo<br></code></pre></td></tr></table></figure>
-<p>Termux 的界面会变成TUI。默认选中“Mirror group”，此时可以用手指点击 &lt;OK&gt; 进入下一步。然后 Termux 会让你选择用哪个地区的软件源，点击“Mirrors in Chinese Mainland”后，对应的选项会高亮，然后点 <OK>，Termux 会对中国大陆的软件源测速。完毕后，软件源更换完成。</OK></p>
-<p>执行以下命令更新软件包来验证：</p>
+<p>执行后，一个文本用户界面（TUI）将会出现：</p>
+<ol>
+<li>保持默认选中的 “Mirror group” 不动，直接用手指点击屏幕上的 <code>&lt;OK&gt;</code>。</li>
+<li>使用方向键或手指点选 “Mirrors in Chinese Mainland”。</li>
+<li>再次点击 <code>&lt;OK&gt;</code>，Termux 会自动测试中国大陆各镜像源的速度并选择最优的一个。</li>
+</ol>
+<p>完成后，运行以下命令更新并升级所有基础软件包，以验证更换是否成功：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pkg update &amp;&amp; pkg upgrade -y<br></code></pre></td></tr></table></figure>
-<h2 id="安装-proot-distro"><a class="markdownIt-Anchor" href="#安装-proot-distro"></a> 安装 proot-distro</h2>
-<p>执行以下命令来安装 proot-distro：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pkg <span class="hljs-keyword">install</span> proot -y<br></code></pre></td></tr></table></figure>
-<h2 id="使用-proot-distro-安装-linux以-ubuntu-为例"><a class="markdownIt-Anchor" href="#使用-proot-distro-安装-linux以-ubuntu-为例"></a> 使用 proot-distro 安装 Linux，以 Ubuntu 为例</h2>
-<p>proot-distro 是 Termux 的一个命令行工具，借助该工具，用户可以轻松地在手机或平板电脑上创建一个轻量级的、功能齐全的 Linux 环境，而无需对设备进行 root。如果你的平板已经 root,可以使用 chroot 安装 Linux，此教程不提供这种安装方式的教程。</p>
-<p>注意：此步骤需要使用代理等方式，才能以正常速度下载内容。</p>
-<p>执行以下命令安装 proot-distro 下的 Ubuntu：</p>
+<hr>
+<h3 id="二-核心步骤通过-proot-distro-安装-ubuntu"><a class="markdownIt-Anchor" href="#二-核心步骤通过-proot-distro-安装-ubuntu"></a> <strong>二、核心步骤：通过 proot-distro 安装 Ubuntu</strong></h3>
+<p><code>proot-distro</code> 是一个强大的脚本工具，它利用 <code>proot</code> 技术，让我们可以在 Termux 中轻松地安装和管理一个完整的 Linux 发行版，全程无需 Root 权限。</p>
+<blockquote>
+<p><strong>网络提醒：</strong> 下载 Linux 根文件系统较大，此步骤<strong>强烈建议</strong>在全局代理环境下进行，否则可能会极其缓慢或失败。</p>
+</blockquote>
+<h4 id="21-安装-proot-distro"><a class="markdownIt-Anchor" href="#21-安装-proot-distro"></a> <strong>2.1 安装 proot-distro</strong></h4>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pkg install proot-distro -y<br></code></pre></td></tr></table></figure>
+<h4 id="22-安装-ubuntu"><a class="markdownIt-Anchor" href="#22-安装-ubuntu"></a> <strong>2.2 安装 Ubuntu</strong></h4>
+<p>我们将以 Ubuntu 为例进行安装。<code>pd</code> 是 <code>proot-distro</code> 的缩写。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pd install ubuntu<br></code></pre></td></tr></table></figure>
-<p>下载安装完成后，执行以下命令登录 Ubuntu：</p>
+<p>该命令会自动下载 Ubuntu 的根文件系统并进行配置。</p>
+<blockquote>
+<p><strong>小贴士：</strong> 您可以通过 <code>pd list</code> 命令查看所有支持的 Linux 发行版，然后使用 <code>pd install &lt;发行版名称&gt;</code> 来安装您偏爱的一款。</p>
+</blockquote>
+<h4 id="23-登录-ubuntu-环境"><a class="markdownIt-Anchor" href="#23-登录-ubuntu-环境"></a> <strong>2.3 登录 Ubuntu 环境</strong></h4>
+<p>安装完毕后，执行以下命令即可“登录”到这个全新的 Ubuntu 系统中：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">pd login ubuntu<br></code></pre></td></tr></table></figure>
-<p>如果你想使用其他发行版，可以使用 <code>pd list</code> 命令以显示可以安装的 Linux 发行版，再使用 <code>pd install distro-name</code> 来安装。</p>
-<h2 id="配置-linux"><a class="markdownIt-Anchor" href="#配置-linux"></a> 配置 Linux</h2>
-<h3 id="创建普通用户"><a class="markdownIt-Anchor" href="#创建普通用户"></a> 创建普通用户</h3>
-<p>使用以下命令，假设要创建的用户名是 <code>user</code>：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">useradd -m user<br></code></pre></td></tr></table></figure>
-<p>给普通用户创建密码：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">passwd user<br></code></pre></td></tr></table></figure>
-<p>注：输入密码时，密码不会显示。需要输入两次密码，每次输入完成后，按回车。</p>
-<h3 id="给普通用户授权-sudo-权限"><a class="markdownIt-Anchor" href="#给普通用户授权-sudo-权限"></a> 给普通用户授权 sudo 权限</h3>
-<p>此处用的是添加到 sudo 用户组的方式，也可以用编辑 sudoer 配置文件的方式。<br>
-执行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">usermod -aG sudo user<br></code></pre></td></tr></table></figure>
-<p>切换到普通用户：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">su user<br></code></pre></td></tr></table></figure>
-<p>此时会发现，命令行左侧由<code>#</code>变成了<code>$</code>。<br>
-验证是否授权成功：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo -i<br></code></pre></td></tr></table></figure>
-<p>如果提示输入密码，那么就授权成功了。</p>
-<h3 id="为-ubuntu-更换镜像源"><a class="markdownIt-Anchor" href="#为-ubuntu-更换镜像源"></a> 为 Ubuntu 更换镜像源</h3>
-<p>此处以中国科学技术大学提供的源和教程为例。</p>
-<p>备份原镜像源文件：</p>
+<p>登录成功后，您会看到命令提示符变为 <code>root@localhost:~#</code>，这表示您已身处 Ubuntu 的 <code>root</code> 用户环境中。</p>
+<hr>
+<h3 id="三-精细调校配置-ubuntu-子系统"><a class="markdownIt-Anchor" href="#三-精细调校配置-ubuntu-子系统"></a> <strong>三、精细调校：配置 Ubuntu 子系统</strong></h3>
+<p>一个纯净的系统还需要一些基础配置才能顺手使用。</p>
+<h4 id="31-创建一个普通用户"><a class="markdownIt-Anchor" href="#31-创建一个普通用户"></a> <strong>3.1 创建一个普通用户</strong></h4>
+<p>直接使用 <code>root</code> 用户操作并非最佳实践。让我们创建一个日常使用的普通用户（假设用户名为 <code>dev</code>）：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># -m 标志会自动创建用户的家目录 /home/dev</span><br>useradd -m dev<br></code></pre></td></tr></table></figure>
+<p>为新用户设置密码：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">passwd dev<br></code></pre></td></tr></table></figure>
+<p>按照提示输入两次密码。注意，输入过程中密码是不可见的。</p>
+<h4 id="32-授予-sudo-权限"><a class="markdownIt-Anchor" href="#32-授予-sudo-权限"></a> 3.2 授予 sudo 权限</h4>
+<p>为了让 <code>dev</code> 用户能执行需要管理员权限的操作，我们需要将其加入 <code>sudo</code> 用户组。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">usermod -aG sudo dev<br></code></pre></td></tr></table></figure>
+<p>现在，切换到新创建的用户：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">su - dev<br></code></pre></td></tr></table></figure>
+<p>您会发现命令提示符从 <code>#</code> 变成了 <code>$</code>，表示已成功切换。</p>
+<p>可以通过 <code>sudo whoami</code> 命令验证 <code>sudo</code> 是否生效。如果系统提示输入 <code>dev</code> 用户的密码，并且随后输出了 <code>root</code>，则表示配置成功。</p>
+<h4 id="33-为-ubuntu-更换国内镜像源"><a class="markdownIt-Anchor" href="#33-为-ubuntu-更换国内镜像源"></a> <strong>3.3 为 Ubuntu 更换国内镜像源</strong></h4>
+<p>和配置 Termux 一样，为子系统更换镜像源也至关重要。由于我们是 Arm64 架构，需要使用 <code>ubuntu-ports</code> 仓库。</p>
+<ol>
+<li>
+<p><strong>备份原始源文件：</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo <span class="hljs-built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak<br></code></pre></td></tr></table></figure>
-<p>替换镜像源为中科大源：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo sed -i -e <span class="hljs-string">&#x27;s@//ports.ubuntu.com/\? @//ports.ubuntu.com/ubuntu-ports @g&#x27;</span> \<br>            -e <span class="hljs-string">&#x27;s@//ports.ubuntu.com@//mirrors.ustc.edu.cn@g&#x27;</span> \<br>            /etc/apt/sources.list<br></code></pre></td></tr></table></figure>
-<p>更新一下软件包来测试，此时可以关掉代理：</p>
+</li>
+<li>
+<p><strong>编辑源文件：</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo nano /etc/apt/sources.list<br></code></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>清空文件内容，并粘贴以下中科大镜像源配置：</strong></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-comment"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br>deb https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse<br><span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse</span><br>deb https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse<br><span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse</span><br>deb https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse<br><span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse</span><br>deb https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-security main restricted universe multiverse<br><span class="hljs-comment"># deb-src https://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-security main restricted universe multiverse</span><br></code></pre></td></tr></table></figure>
+<p><em>(注：以上配置适用于 Ubuntu 22.04 (Jammy)，请根据您的版本自行调整代号)</em></p>
+</li>
+<li>
+<p><strong>保存并退出</strong> (在 <code>nano</code> 中，按 <code>Ctrl+X</code> -&gt; <code>Y</code> -&gt; <code>Enter</code>)。</p>
+</li>
+<li>
+<p><strong>刷新软件包列表进行验证。此时可以关闭代理，体验国内源的极速。</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt update &amp;&amp; sudo apt upgrade -y<br></code></pre></td></tr></table></figure>
-<h2 id="在-proot-容器中安装并配置-visual-studio-code"><a class="markdownIt-Anchor" href="#在-proot-容器中安装并配置-visual-studio-code"></a> 在 proot 容器中安装并配置 Visual Studio Code</h2>
-<p>注意：此步骤可能需要使用代理等方式，才能以正常速度下载内容。进行以下操作的用户是刚才创建的普通用户，而不是 root。<br>
-有两种方式，第一种是安装 VSCode 完整版，第二种是只安装命令行版，二选一即可。</p>
-<h3 id="安装完整版"><a class="markdownIt-Anchor" href="#安装完整版"></a> 安装完整版</h3>
-<p>安装 wget：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">sudo apt <span class="hljs-keyword">install</span> wget tar -y<br></code></pre></td></tr></table></figure>
-<p>使用 wget 下载 Visual Studio Code 完整版（复制以下内容后，长按命令行界面，再点 Paste 粘贴）：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">wget -O code.deb <span class="hljs-string">&quot;https://code.visualstudio.com/sha/download?build=stable&amp;os=linux-deb-arm64&quot;</span><br></code></pre></td></tr></table></figure>
-<p>安装：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt install ./code.deb -y<br></code></pre></td></tr></table></figure>
-<h3 id="安装命令行版"><a class="markdownIt-Anchor" href="#安装命令行版"></a> 安装命令行版</h3>
-<p>安装 wget, tar：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">sudo apt <span class="hljs-keyword">install</span> wget tar -y<br></code></pre></td></tr></table></figure>
-<p>使用 wget 下载 Visual Studio Code 命令行版：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">wget -O code.tar.gz <span class="hljs-string">&quot;https://code.visualstudio.com/sha/download?build=stable&amp;os=cli-alpine-arm64&quot;</span><br></code></pre></td></tr></table></figure>
-<p>解压缩：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">tar zxvf ./code.tar.gz<br><span class="hljs-comment"># 以防万一，添加可执行权限</span><br><span class="hljs-built_in">chmod</span> +x ./code/code<br></code></pre></td></tr></table></figure>
-<p>假设 code 二进制文件的位置在<code>/home/user/code/code</code>，现在把<code>/home/user/code</code>加入 PATH 环境变量中：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">vi /home/user/.bashrc<br></code></pre></td></tr></table></figure>
-<p>键入<code>Shift + G</code>跳到最后，按<code>o</code>键另起一行，复制以下内容后，长按命令行界面，再点 Paste 粘贴：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/home/user/code<br></code></pre></td></tr></table></figure>
-<p>按<code>Esc</code>（注意是 Termux 界面下方左上角的 <code>Esc</code>），<code>:wq</code>和回车保存并退出。</p>
-<p>执行以下命令生效：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure>
-<h2 id="运行-visual-studio-code-并开始使用"><a class="markdownIt-Anchor" href="#运行-visual-studio-code-并开始使用"></a> 运行 Visual Studio Code 并开始使用</h2>
-<p>注意：此步骤可能需要使用代理等方式，才能以正常速度下载内容。</p>
-<p>执行以下命令以运行 Visual Studio Code 服务器：</p>
+</li>
+</ol>
+<hr>
+<h3 id="四-核心应用安装与运行-vs-code"><a class="markdownIt-Anchor" href="#四-核心应用安装与运行-vs-code"></a> <strong>四、核心应用：安装与运行 VS Code</strong></h3>
+<blockquote>
+<p><strong>网络提醒：</strong> 下载 VS Code 同样建议在代理环境下进行。<br>
+以下操作均在 <code>dev</code> 普通用户下进行。</p>
+</blockquote>
+<p>我们提供两种安装方式，<strong>任选其一</strong>即可。</p>
+<h4 id="方案一安装-vs-code-命令行版-推荐更轻量"><a class="markdownIt-Anchor" href="#方案一安装-vs-code-命令行版-推荐更轻量"></a> <strong>方案一：安装 VS Code 命令行版 (推荐，更轻量)</strong></h4>
+<ol>
+<li><strong>安装依赖：</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt install wget tar -y<br></code></pre></td></tr></table></figure>
+</li>
+<li><strong>下载 VS Code CLI (ARM64 for Linux)：</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">wget -O vscode-cli.tar.gz <span class="hljs-string">&quot;https://code.visualstudio.com/sha/download?build=stable&amp;os=cli-linux-arm64&quot;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><strong>解压到家目录：</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">tar -xzf vscode-cli.tar.gz -C ~/<br><span class="hljs-comment"># 重命名为一个更简洁的目录名</span><br><span class="hljs-built_in">mv</span> ~/vscode-cli-linux-arm64 ~/vscode-cli<br></code></pre></td></tr></table></figure>
+</li>
+<li><strong>将 <code>code</code> 命令加入环境变量，方便随时调用：</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 编辑 .bashrc 文件</span><br>nano ~/.bashrc<br></code></pre></td></tr></table></figure>
+在文件末尾另起一行，添加：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">export</span> PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$HOME</span>/vscode-cli&quot;</span><br></code></pre></td></tr></table></figure>
+保存并退出后，执行以下命令使配置立即生效：<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="方案二安装-vs-code-完整版-deb"><a class="markdownIt-Anchor" href="#方案二安装-vs-code-完整版-deb"></a> <strong>方案二：安装 VS Code 完整版 (.deb)</strong></h4>
+<ol>
+<li><strong>安装依赖：</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt install wget -y<br></code></pre></td></tr></table></figure>
+</li>
+<li><strong>下载 VS Code .deb 包 (ARM64)：</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">wget -O code.deb <span class="hljs-string">&quot;https://code.visualstudio.com/sha/download?build=stable&amp;os=linux-deb-arm64&quot;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><strong>使用 apt 安装 (它会自动处理依赖关系)：</strong><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt install ./code.deb -y<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h3 id="五-见证奇迹启动并访问-vs-code-web"><a class="markdownIt-Anchor" href="#五-见证奇迹启动并访问-vs-code-web"></a> <strong>五、见证奇迹：启动并访问 VS Code Web</strong></h3>
+<p>无论您选择哪种安装方式，启动 Web 服务的命令都是相同的。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">code serve-web<br></code></pre></td></tr></table></figure>
-<p>如果没有问题，命令行会输出类似以下的内容：</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-comment">*</span><br><span class="hljs-comment">* Visual Studio Code Server</span><br><span class="hljs-comment">*</span><br><span class="hljs-comment">* By using the software, you agree to</span><br><span class="hljs-comment">* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and</span><br><span class="hljs-comment">* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).</span><br><span class="hljs-comment">*</span><br>Web UI available at http:<span class="hljs-comment">//127.0.0.1:8000?tkn=***</span><br></code></pre></td></tr></table></figure>
-<p>复制最后的链接，到 Chrome, Edge 等 Chromium 浏览器粘贴，稍等片刻就可使用了。</p>
-<h2 id="已知的问题"><a class="markdownIt-Anchor" href="#已知的问题"></a> 已知的问题</h2>
-<p>安装插件时，会提示无法验证证书，可以选择忽略并继续安装。</p>
-<p>无法使用 Copilot，原因也是无法验证证书。</p>
+<blockquote>
+<p><strong>网络提醒：</strong> 首次运行会下载 VS Code Server，请确保网络通畅。</p>
+</blockquote>
+<p>成功后，终端会显示类似如下信息：</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-comment">*</span><br><span class="hljs-comment">* Visual Studio Code Server</span><br><span class="hljs-comment">*</span><br><span class="hljs-comment">* By using the software, you agree to the...</span><br><span class="hljs-comment">*</span><br>Web UI available at http:<span class="hljs-comment">//127.0.0.1:8000/?tkn=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span><br></code></pre></td></tr></table></figure>
+<p><strong>复制 <code>http://127.0.0.1:8000</code> 开始的完整链接</strong>，打开平板上的 Chrome、Edge 等现代浏览器，粘贴并访问。稍等片刻的加载后，一个功能完整的 VS Code 界面就会呈现在您眼前！</p>
+<p>您现在可以打开终端、安装插件、管理文件、编写代码，享受在平板上无缝衔接的开发乐趣了。</p>
+<hr>
+<h3 id="六-已知问题与展望"><a class="markdownIt-Anchor" href="#六-已知问题与展望"></a> <strong>六、已知问题与展望</strong></h3>
+<ul>
+<li><strong>插件证书验证：</strong> 在当前 <code>proot</code> 环境下，部分需要严格证书验证的插件（如官方的 GitHub Copilot）可能无法正常工作。安装普通插件时若遇到证书提示，可以选择忽略并继续安装。</li>
+<li><strong>性能：</strong> <code>proot</code> 环境会有一定的性能损耗，但在现代平板的性能下，用于 Web 开发、脚本编写等任务已绰绰有余。</li>
+</ul>
+<p>恭喜您，您已成功将 Android 平板武装成了一台强大的便携开发利器！</p>
 
                 
               </div>
@@ -429,15 +478,6 @@
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E7%BC%96%E7%A8%8B/" class="print-no-link">#编程</a>
-      
-        <a href="/tags/%E5%AE%89%E5%8D%93/" class="print-no-link">#安卓</a>
-      
-    </div>
-  
 </div>
 
 
@@ -446,8 +486,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程</div>
-      <div>https://xuejie1.top/2025/11/01/how-to-code-with-your-android-tablet/</div>
+      <div>如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版）</div>
+      <div>https://xuejie1.top/2025/11/01/how-to-code-with-your-android-tablet-ai/</div>
     </div>
     <div class="license-meta">
       
@@ -491,18 +531,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/11/01/how-to-code-with-your-android-tablet-ai/" title="如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版）">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/31/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2025/11/01/how-to-code-with-your-android-tablet/" title="如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程">
+                        <span class="hidden-mobile">如何在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
