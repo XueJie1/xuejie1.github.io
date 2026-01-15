@@ -28,8 +28,8 @@
 <meta property="article:published_time" content="2025-11-01T09:25:40.000Z">
 <meta property="article:modified_time" content="2025-11-02T01:34:56.548Z">
 <meta property="article:author" content="Xue Jie">
-<meta property="article:tag" content="编程">
 <meta property="article:tag" content="安卓">
+<meta property="article:tag" content="编程">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@XueJie32">
 <meta name="twitter:site" content="https://x.com/XueJie32">
@@ -123,7 +123,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/rss2.xml" title="XueJie 的博客" type="application/rss+xml">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/rss2.xml" title="XueJie 的博客" type="application/rss+xml">
 </head>
 
 <body>
@@ -367,34 +367,34 @@
 <h3 id="给普通用户授权-sudo-权限"><a class="markdownIt-Anchor" href="#给普通用户授权-sudo-权限"></a> 给普通用户授权 sudo 权限</h3>
 <p>此处用的是添加到 sudo 用户组的方式，也可以用编辑 sudoer 配置文件的方式。<br>
 执行以下命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">usermod -aG sudo user<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">usermod -aG <span class="hljs-built_in">sudo</span> user<br></code></pre></td></tr></table></figure>
 <p>切换到普通用户：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">su user<br></code></pre></td></tr></table></figure>
 <p>此时会发现，命令行左侧由<code>#</code>变成了<code>$</code>。<br>
 验证是否授权成功：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo -i<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> -i<br></code></pre></td></tr></table></figure>
 <p>如果提示输入密码，那么就授权成功了。</p>
 <h3 id="为-ubuntu-更换镜像源"><a class="markdownIt-Anchor" href="#为-ubuntu-更换镜像源"></a> 为 Ubuntu 更换镜像源</h3>
 <p>此处以中国科学技术大学提供的源和教程为例。</p>
 <p>备份原镜像源文件：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo <span class="hljs-built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">cp</span> /etc/apt/sources.list /etc/apt/sources.list.bak<br></code></pre></td></tr></table></figure>
 <p>替换镜像源为中科大源：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo sed -i -e <span class="hljs-string">&#x27;s@//ports.ubuntu.com/\? @//ports.ubuntu.com/ubuntu-ports @g&#x27;</span> \<br>            -e <span class="hljs-string">&#x27;s@//ports.ubuntu.com@//mirrors.ustc.edu.cn@g&#x27;</span> \<br>            /etc/apt/sources.list<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> sed -i -e <span class="hljs-string">&#x27;s@//ports.ubuntu.com/\? @//ports.ubuntu.com/ubuntu-ports @g&#x27;</span> \<br>            -e <span class="hljs-string">&#x27;s@//ports.ubuntu.com@//mirrors.ustc.edu.cn@g&#x27;</span> \<br>            /etc/apt/sources.list<br></code></pre></td></tr></table></figure>
 <p>更新一下软件包来测试，此时可以关掉代理：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt update &amp;&amp; sudo apt upgrade -y<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> apt update &amp;&amp; <span class="hljs-built_in">sudo</span> apt upgrade -y<br></code></pre></td></tr></table></figure>
 <h2 id="在-proot-容器中安装并配置-visual-studio-code"><a class="markdownIt-Anchor" href="#在-proot-容器中安装并配置-visual-studio-code"></a> 在 proot 容器中安装并配置 Visual Studio Code</h2>
 <p>注意：此步骤可能需要使用代理等方式，才能以正常速度下载内容。进行以下操作的用户是刚才创建的普通用户，而不是 root。<br>
 有两种方式，第一种是安装 VSCode 完整版，第二种是只安装命令行版，二选一即可。</p>
 <h3 id="安装完整版"><a class="markdownIt-Anchor" href="#安装完整版"></a> 安装完整版</h3>
 <p>安装 wget：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">sudo apt <span class="hljs-keyword">install</span> wget tar -y<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install wget tar -y<br></code></pre></td></tr></table></figure>
 <p>使用 wget 下载 Visual Studio Code 完整版（复制以下内容后，长按命令行界面，再点 Paste 粘贴）：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">wget -O code.deb <span class="hljs-string">&quot;https://code.visualstudio.com/sha/download?build=stable&amp;os=linux-deb-arm64&quot;</span><br></code></pre></td></tr></table></figure>
 <p>安装：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt install ./code.deb -y<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">sudo</span> apt install ./code.deb -y<br></code></pre></td></tr></table></figure>
 <h3 id="安装命令行版"><a class="markdownIt-Anchor" href="#安装命令行版"></a> 安装命令行版</h3>
 <p>安装 wget, tar：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">sudo apt <span class="hljs-keyword">install</span> wget tar -y<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install wget tar -y<br></code></pre></td></tr></table></figure>
 <p>使用 wget 下载 Visual Studio Code 命令行版：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">wget -O code.tar.gz <span class="hljs-string">&quot;https://code.visualstudio.com/sha/download?build=stable&amp;os=cli-alpine-arm64&quot;</span><br></code></pre></td></tr></table></figure>
 <p>解压缩：</p>
