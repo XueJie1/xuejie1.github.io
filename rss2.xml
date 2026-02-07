@@ -9,8 +9,33 @@
     <atom:link href="https://xuejie1.top/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 02 Nov 2025 01:34:55 GMT</pubDate>
+    <pubDate>Sat, 07 Feb 2026 07:48:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>how-to-use-free-kaggle-t4-gpu-to-use-llamacpp</title>
+      <link>https://xuejie1.top/2026/02/07/how-to-use-free-kaggle-t4-gpu-to-use-llamacpp/</link>
+      <guid>https://xuejie1.top/2026/02/07/how-to-use-free-kaggle-t4-gpu-to-use-llamacpp/</guid>
+      <pubDate>Sat, 07 Feb 2026 07:47:11 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;如何使用-kaggle-免费-t4-x-2-显卡部署-llamacpp&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#如何使用-kaggle-免费-t4-x-2-显卡部署-llamacpp&quot;&gt;&lt;/a&gt; 如何使用 Kaggle 免费</description>
+          
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="如何使用-kaggle-免费-t4-x-2-显卡部署-llamacpp"><a class="markdownIt-Anchor" href="#如何使用-kaggle-免费-t4-x-2-显卡部署-llamacpp"></a> 如何使用 Kaggle 免费 T4 x 2 显卡部署 llama.cpp</h2><p>to be continued…</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://xuejie1.top/2026/02/07/how-to-use-free-kaggle-t4-gpu-to-use-llamacpp/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>在 Android 平板上使用 Termux 和 Visual Studio Code 网页版，实现便携编程（Gemini 润色版）</title>
